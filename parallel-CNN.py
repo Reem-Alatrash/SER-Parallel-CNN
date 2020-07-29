@@ -4,10 +4,15 @@
 @Python ver: 2.7
 =======================
 
-This script creates a convolutional neural network (CNN) with parallel convolution layers 
-to classify the emotion embedded within speech signals (both scripted and improvised) into 1 of 4 emotions: happy, sad, angry, neutral.
+This script creates a convolutional neural network (CNN) with parallel convolution layers to classify the emotion embedded within speech signals (both scripted and improvised) into 1 of 4 emotions: happy, sad, angry, neutral.
 
-The CNN takes pre-processed logMel features extracted from the speech subset of the Interactive Emotional Dyadic Motion Capture (IEMOCAP) database.
+The system takes as input pre-processed features extracted from the speech subset of the Interactive Emotional Dyadic Motion Capture (IEMOCAP) database. 
+The system produces 2 files:
+1. The model (parallel CNN), which is saved as 'parallel_cnn_BN.h5'.
+2. The predictions for both validation/dev and test sets in tab-seperated files. Each prediction file contains the IDs audio signals and their corresponding predicted class.
+
+Example:
+MSP-IMPROV-S08A-F05-S-FM02	happy
 
 Note(s): run in py 2.7 with the data extracted using py 2.7
 
@@ -34,7 +39,7 @@ import pickle
 ******* ********* *********
 '''
 # Step 1: Prepare data
-input_dir = "/mount/studenten/arbeitsdaten-studenten1/alatrarm/DL-project/" 
+input_dir = "./data/" 
 #names = ['data_prosody.train', 'data_logMel.train', 'data_prosody.valid', 'data_logMel.valid', 'data_prosody.test', 
 #         'data_logMel.test']
 file_paths = [input_dir + "data_prosody.train", input_dir + "data_logMel.train", input_dir + "data_prosody.valid", 
