@@ -1,9 +1,9 @@
-# SER-Parallel-CNN
+#  A Parallel CNN for SER
 
 ## About
 A speech emotion recognition (SER) system for a deep learning master-course. It uses a convolutional neural network (CNN) with parallel convolution layers to classify the emotion embedded within speech signals (both scripted and improvised) into 1 of 4 emotions: happy, sad, angry, neutral. 
 
-Note: The scripts are written in python 2.7
+The CNN was built using Keras with a Tensorflow backend. The scripts are written in python 2.7 and it is *highly* recommended to upgrade them to python 3.x as support for python 2.7 stopped as of Jan 2020.
 
 ##### Input
 The system takes as input pre-processed features extracted from the speech subset of the Interactive Emotional Dyadic Motion Capture (IEMOCAP) database.
@@ -16,6 +16,11 @@ The system produces 2 files:
 Example:
 MSP-IMPROV-S08A-F05-S-FM02	happy
 
+## Features
+The CNN has the following features:
+1. Early stopping.
+2. Batch Normalization.
+3. Adam for optimization and ReLU for the ativation function.
 
 ## Usage
 The script is available in two formats:
